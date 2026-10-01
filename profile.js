@@ -1,4 +1,4 @@
-﻿// Edit this file to update bilingual academic content.
+// Edit this file to update bilingual academic content.
 window.HOMEPAGE = {
   "name": {
     "zh": "方鹏杰",
@@ -22,7 +22,7 @@ window.HOMEPAGE = {
     "en": "I am a PhD student in Control Science and Engineering at Shanghai Jiao Tong University, advised by Prof. Jianping He. My research focuses on multi-agent coordination, robot learning, and underwater robotics, bringing perception, planning, and control together on real robotic systems.\n\nI received my master's degree in Control Engineering from Shanghai Jiao Tong University and my bachelor's degree in Aircraft Design from Xi'an Jiaotong University. My work also includes mechanical, electronic, and embedded development for robotic platforms, as well as science communication."
   },
   "photo": "./assets/portrait.jpg",
-  "cv": "",
+  "cv": "/cv/",
   "email": "fpjgaoge@gmail.com",
   "github": "https://github.com/FPJ-GAOGE",
   "scholar": "https://scholar.google.com.hk/citations?user=u5ba-IQAAAAJ&hl=zh-CN",
@@ -30,7 +30,53 @@ window.HOMEPAGE = {
     "Pangkit Fong",
     "Pang-Kit Fong"
   ],
-  "news": [],
+  "news": [
+    {
+      "date": "2026-09-20",
+      "text": {
+        "zh": "FinsSim 水下机器人仿真与学习平台预印本已公开。",
+        "en": "FinsSim, our integrated simulation platform for underwater robot learning, is available on arXiv."
+      },
+      "url": "https://arxiv.org/abs/2609.23943"
+    },
+    {
+      "date": "2026-09-17",
+      "text": {
+        "zh": "水下视觉目标跟踪与自适应模型融合 MPC 研究预印本已公开。",
+        "en": "Our preprint on underwater visual target tracking and adaptive model-fusion MPC is available."
+      },
+      "url": "https://arxiv.org/abs/2609.20731"
+    },
+    {
+      "date": "2025-07",
+      "text": {
+        "zh": "参与中国国际大学生海洋水下机器人大赛，获 AUV 赛道第五名。",
+        "en": "Participated in the China International University Underwater Robotics Competition; 5th place in the AUV track."
+      }
+    },
+    {
+      "date": "2025-06-11",
+      "text": {
+        "zh": "Aucamp 低成本分布式水下多机器人平台预印本已公开。",
+        "en": "The Aucamp preprint on low-cost, distributed underwater multi-robot localization is available."
+      },
+      "url": "https://arxiv.org/abs/2506.09876"
+    },
+    {
+      "date": "2024-07",
+      "text": {
+        "zh": "参与在英国牛津举办的 Learning for Dynamics & Control 2024 学术交流。",
+        "en": "Attended Learning for Dynamics & Control 2024 in Oxford, UK."
+      }
+    },
+    {
+      "date": "2023-09",
+      "text": {
+        "zh": "开始在上海交通大学攻读控制科学与工程博士学位。",
+        "en": "Started my PhD in Control Science and Engineering at Shanghai Jiao Tong University."
+      }
+    }
+  ],
   "research": [
     {
       "title": {
@@ -40,7 +86,8 @@ window.HOMEPAGE = {
       "description": {
         "zh": "视觉定位、目标跟踪、多传感器融合，以及面向真实水下平台的建模与预测控制。",
         "en": "Visual localization, target tracking, sensor fusion, and predictive control on real underwater platforms."
-      }
+      },
+      "visual": "underwater"
     },
     {
       "title": {
@@ -50,7 +97,8 @@ window.HOMEPAGE = {
       "description": {
         "zh": "分布式优化、覆盖与任务分配，研究通信与感知约束下的多机器人协作。",
         "en": "Distributed optimization, coverage, and task allocation under communication and sensing constraints."
-      }
+      },
+      "visual": "coordination"
     },
     {
       "title": {
@@ -60,7 +108,8 @@ window.HOMEPAGE = {
       "description": {
         "zh": "结合强化学习、大语言模型和闭环反馈，探索从任务规划到实机控制的方法。",
         "en": "Reinforcement learning, language-model-based planning, and closed-loop feedback for real-world robot control."
-      }
+      },
+      "visual": "learning"
     }
   ],
   "publications": [
@@ -75,7 +124,14 @@ window.HOMEPAGE = {
       "abstract": {
         "zh": "集成流体动力学模型、控制基线、多传感器定位与推力分配，串联水下机器人学习的仿真到实机流程。",
         "en": "A simulation-to-reality platform integrating hydrodynamics, control baselines, sensor-fusion localization, and thrust allocation for underwater robot learning."
-      }
+      },
+      "image": "./assets/papers/finssim.png",
+      "imageAlt": {
+        "zh": "FinsSim 仿真、机器人学习与实机部署流程总览",
+        "en": "FinsSim overview: simulation, robot learning, and physical deployment"
+      },
+      "imageSource": "https://arxiv.org/html/2609.23943v1#S2.F1",
+      "topic": "underwater"
     },
     {
       "title": "Underwater Visual Target Tracking with Target-Specific Depth Estimation and Adaptive Model-Fusion Predictive Control",
@@ -88,7 +144,14 @@ window.HOMEPAGE = {
       "abstract": {
         "zh": "结合双目视觉、目标专属深度提取、卡尔曼滤波与自适应模型融合 MPC，实现约束下的水下目标跟踪。",
         "en": "Stereo visual servoing with target-specific depth estimation, Kalman filtering, and adaptive model-fusion MPC for constrained underwater target tracking."
-      }
+      },
+      "image": "./assets/papers/tracking.png",
+      "imageAlt": {
+        "zh": "水下视觉跟踪平台与任务示意",
+        "en": "Underwater visual target-tracking platform and task overview"
+      },
+      "imageSource": "https://arxiv.org/html/2609.20731v1#S1.F1",
+      "topic": "underwater"
     },
     {
       "title": "Static Timing Orchestration for Tree-Structured Robot Control Firmware",
@@ -101,7 +164,8 @@ window.HOMEPAGE = {
       "abstract": {
         "zh": "提出 FineMote 固件生成框架，利用编译期信息为树状设备模型确定执行顺序，分析时序约束与决策延迟。",
         "en": "FineMote generates firmware with compile-time scheduling for tree-structured robot device models, with analysis of deadlines, precedence, and decision latency."
-      }
+      },
+      "topic": "systems"
     },
     {
       "title": "Aucamp: An Underwater Camera-Based Multi-Robot Platform with Low-Cost, Distributed, and Robust Localization",
@@ -114,7 +178,14 @@ window.HOMEPAGE = {
       "abstract": {
         "zh": "基于单目相机的低成本水下多机器人平台，通过分布式更新协议实现定位，结合动力学与鲁棒姿态控制提高稳定性。",
         "en": "A low-cost underwater multi-robot platform with monocular sensing, distributed localization updates, and robust orientation control."
-      }
+      },
+      "image": "./assets/papers/aucamp.png",
+      "imageAlt": {
+        "zh": "Aucamp 水下多机器人平台总览",
+        "en": "Overview of the Aucamp underwater multi-robot platform"
+      },
+      "imageSource": "https://arxiv.org/html/2506.09876v1#S0.F1",
+      "topic": "underwater"
     },
     {
       "title": "HiCRISP: An LLM-Based Hierarchical Closed-Loop Robotic Intelligent Self-Correction Planner",
@@ -127,7 +198,18 @@ window.HOMEPAGE = {
       "abstract": {
         "zh": "分层闭环规划框架分别处理高层规划与低层执行错误，通过大语言模型和反馈在机器人任务过程中进行自我修正。",
         "en": "A hierarchical closed-loop planner using language models and feedback to correct planning errors and action failures during robot task execution."
-      }
+      },
+      "image": "./assets/papers/hicrisp.png",
+      "imageAlt": {
+        "zh": "HiCRISP 分层闭环自我修正规划框架",
+        "en": "HiCRISP hierarchical closed-loop self-correction framework"
+      },
+      "imageSource": "https://ming-bot.github.io/HiCRISP.github.io/",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "topic": "learning",
+      "project": "https://ming-bot.github.io/HiCRISP.github.io/",
+      "code": "https://github.com/ming-bot/HiCRISP"
     },
     {
       "title": "HiCRISP: A Hierarchical Closed-Loop Robotic Intelligent Self-Correction Planner",
@@ -139,7 +221,18 @@ window.HOMEPAGE = {
       "year": "2023",
       "type": "Preprint",
       "url": "https://arxiv.org/abs/2309.12089",
-      "pdf": "https://arxiv.org/pdf/2309.12089"
+      "pdf": "https://arxiv.org/pdf/2309.12089",
+      "image": "./assets/papers/hicrisp.png",
+      "imageAlt": {
+        "zh": "HiCRISP 分层闭环自我修正规划框架",
+        "en": "HiCRISP hierarchical closed-loop self-correction framework"
+      },
+      "imageSource": "https://ming-bot.github.io/HiCRISP.github.io/",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "topic": "learning",
+      "project": "https://ming-bot.github.io/HiCRISP.github.io/",
+      "code": "https://github.com/ming-bot/HiCRISP"
     },
     {
       "title": "Thermally-induced transitions of multi-frequency defect wave localization and energy harvesting of phononic crystal plate",
@@ -151,7 +244,8 @@ window.HOMEPAGE = {
       "abstract": {
         "zh": "研究热载荷下声子晶体板的多频缺陷态与振动能量采集，分析刚度变化对波局域和采集性能的影响。",
         "en": "A study of thermal stiffness changes, defect wave localization, and vibration energy harvesting in phononic crystal plates."
-      }
+      },
+      "topic": "mechanics"
     },
     {
       "title": "Optimal Attack Against Coverage Path Planning in Multi-robot System",
@@ -163,10 +257,38 @@ window.HOMEPAGE = {
       "abstract": {
         "zh": "研究多机器人覆盖任务的对抗场景，以改进广度优先搜索在离散环境中求解最优攻击路径。",
         "en": "An optimal attack-planning approach for adversarial multi-robot coverage tasks using improved breadth-first search."
-      }
+      },
+      "topic": "coordination"
     }
   ],
   "projects": [
+    {
+      "title": {
+        "zh": "FinsSim · 水下机器人仿真与学习平台",
+        "en": "FinsSim · Underwater Robot Simulation & Learning"
+      },
+      "category": {
+        "zh": "研究项目",
+        "en": "RESEARCH"
+      },
+      "period": "2026",
+      "description": {
+        "zh": "连接 Unity、Isaac Lab、机器人学习与 ROS 2 实机部署，集成水动力学建模、多传感器定位和约束推力分配。",
+        "en": "Connecting Unity and Isaac Lab simulation, robot learning, and ROS 2 deployment with hydrodynamic modeling, multi-sensor localization, and constrained thrust allocation."
+      },
+      "tags": [
+        "Sim-to-Real",
+        "Robot Learning",
+        "ROS 2"
+      ],
+      "url": "https://arxiv.org/abs/2609.23943",
+      "image": "./assets/papers/finssim.png",
+      "imageAlt": {
+        "zh": "FinsSim 仿真、机器人学习与实机部署流程总览",
+        "en": "FinsSim overview: simulation, robot learning, and physical deployment"
+      },
+      "imageSource": "https://arxiv.org/html/2609.23943v1#S2.F1"
+    },
     {
       "title": {
         "zh": "分布式水下多机器人平台",
@@ -189,7 +311,13 @@ window.HOMEPAGE = {
         "Perception",
         "Control"
       ],
-      "url": "https://arxiv.org/abs/2506.09876"
+      "url": "https://arxiv.org/abs/2506.09876",
+      "image": "./assets/papers/aucamp.png",
+      "imageAlt": {
+        "zh": "Aucamp 水下多机器人平台总览",
+        "en": "Overview of the Aucamp underwater multi-robot platform"
+      },
+      "imageSource": "https://arxiv.org/html/2506.09876v1#S0.F1"
     },
     {
       "title": {
@@ -210,7 +338,13 @@ window.HOMEPAGE = {
         "MPC",
         "Robotics"
       ],
-      "url": "https://github.com/FPJ-GAOGE/MPC-fused-model"
+      "url": "https://github.com/FPJ-GAOGE/MPC-fused-model",
+      "image": "./assets/papers/tracking.png",
+      "imageAlt": {
+        "zh": "水下视觉跟踪平台与任务示意",
+        "en": "Underwater visual target-tracking platform and task overview"
+      },
+      "imageSource": "https://arxiv.org/html/2609.20731v1#S1.F1"
     },
     {
       "title": {
@@ -231,7 +365,15 @@ window.HOMEPAGE = {
         "Planning",
         "Closed Loop"
       ],
-      "url": "https://ming-bot.github.io/HiCRISP.github.io/"
+      "url": "https://ming-bot.github.io/HiCRISP.github.io/",
+      "image": "./assets/papers/hicrisp.png",
+      "imageAlt": {
+        "zh": "HiCRISP 分层闭环自我修正规划框架",
+        "en": "HiCRISP hierarchical closed-loop self-correction framework"
+      },
+      "imageSource": "https://ming-bot.github.io/HiCRISP.github.io/",
+      "imageLicense": "CC BY-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
     },
     {
       "title": {
@@ -353,7 +495,8 @@ window.HOMEPAGE = {
       "description": {
         "zh": "导师：何建平教授；多智能体协同、机器人学习、水下机器人。",
         "en": "Advisor: Prof. Jianping He. Multi-agent coordination, robot learning, and underwater robotics."
-      }
+      },
+      "initials": "SJTU"
     },
     {
       "period": "2020.09–2023.06",
@@ -368,7 +511,8 @@ window.HOMEPAGE = {
       "description": {
         "zh": "导师：何建平教授；多智能体与分布式优化。",
         "en": "Advisor: Prof. Jianping He. Multi-agent systems and distributed optimization."
-      }
+      },
+      "initials": "SJTU"
     },
     {
       "period": "2015.09–2020.06",
@@ -379,7 +523,8 @@ window.HOMEPAGE = {
       "organization": {
         "zh": "西安交通大学 · 航空航天系",
         "en": "Xi'an Jiaotong University · Department of Aerospace Engineering"
-      }
+      },
+      "initials": "XJTU"
     }
   ],
   "experience": [],
@@ -445,6 +590,6 @@ window.HOMEPAGE = {
       }
     }
   ],
-  "updated": "2026-10-01"
+  "updated": "2026-10-01",
+  "siteUrl": "https://fpj-gaoge.github.io/"
 };
-
