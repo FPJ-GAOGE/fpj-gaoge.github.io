@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="方鹏杰（Fong Pangkit），上海交通大学博士生。研究多智能体协同、机器人学习与水下机器人。">
+  <meta name="theme-color" content="#1746a2">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Fong Pangkit · Academic Homepage">
+  <meta property="og:description" content="Projects, research notes, and learning experiences.">
+  <title>方鹏杰 · 学术主页</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231746a2'/%3E%3Cpath d='M20 47V17h26v6H27v7h16v6H27v11z' fill='white'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script defer src="./profile.js"></script>
+  <script defer src="./app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">跳到正文</a>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="wordmark" href="#about" aria-label="方鹏杰 学术主页"><span class="brand-initials">PF<span class="brand-dot">.</span></span><span class="wordmark-label" data-i18n="home">学术主页</span></a>
+      <nav class="top-nav" aria-label="主导航" data-i18n-aria="navigation">
+        <a href="#about" data-i18n="about">关于我</a>
+        <a href="#research" data-i18n="research">研究</a>
+        <a href="#publications" data-i18n="publications">论文</a>
+        <a href="#projects" data-i18n="projects">项目</a>
+        <a href="#contact" data-i18n="contact">联系</a>
+      </nav>
+      <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch to English"><span class="language-icon" aria-hidden="true">文/A</span><span id="language-label">EN</span></button>
+    </div>
+  </header>
+  <div class="page-layout">
+    <aside class="profile-sidebar" aria-label="个人信息" data-i18n-aria="profile">
+      <div id="portrait" class="portrait"><img src="./assets/portrait.jpg" alt="方鹏杰" width="126" height="126"></div>
+      <h1 id="profile-name">方鹏杰</h1>
+      <p class="profile-role" id="profile-role">控制科学与工程 · 博士生</p>
+      <p class="profile-affiliation" id="profile-affiliation" hidden></p>
+      <p class="profile-location" id="profile-location" hidden></p>
+      <div id="profile-links" class="profile-links"><a href="https://github.com/FPJ-GAOGE" target="_blank" rel="noopener noreferrer">GitHub</a></div>
+      <div class="sidebar-rule"></div>
+      <p class="sidebar-label" data-i18n="onThisPage">本页内容</p>
+      <nav class="section-nav" aria-label="页面目录" data-i18n-aria="contents">
+        <a class="active" href="#about"><span data-i18n="about">关于我</span><span class="section-number">01</span></a>
+        <a href="#research"><span data-i18n="research">研究方向</span><span class="section-number">02</span></a>
+        <a href="#publications"><span data-i18n="publications">论文发表</span><span class="section-number">03</span></a>
+        <a href="#projects"><span data-i18n="projects">精选项目</span><span class="section-number">04</span></a>
+        <a href="#background"><span data-i18n="background">教育与经历</span><span class="section-number">05</span></a>
+        <a href="#awards"><span data-i18n="awards">荣誉与交流</span><span class="section-number">06</span></a>
+        <a href="#contact"><span data-i18n="contact">联系方式</span><span class="section-number">07</span></a>
+      </nav>
+      <p class="sidebar-note" data-i18n="sidebarNote">项目、研究与持续学习。</p>
+    </aside>
+    <main id="main" tabindex="-1">
+      <section id="about" class="about-section">
+        <p class="eyebrow">ACADEMIC HOMEPAGE</p>
+        <h2 class="intro-title" data-i18n="introTitle">关于我<span class="title-period">.</span></h2>
+        <p class="intro-bio" id="bio">我是方鹏杰，上海交通大学控制科学与工程专业博士生，研究多智能体协同、机器人学习与水下机器人。</p>
+        <div class="intro-links" id="intro-links"></div>
+      </section>
+      <section id="news" class="content-section" hidden>
+        <div class="section-heading"><span class="heading-index">—</span><h2 data-i18n="news">最新动态</h2></div>
+        <div id="news-list" class="news-list"></div>
+      </section>
+      <section id="research" class="content-section">
+        <div class="section-heading"><span class="heading-index">02</span><h2 data-i18n="research">研究方向</h2></div>
+        <div id="research-list" class="research-list"></div>
+      </section>
+      <section id="publications" class="content-section">
+        <div class="section-heading"><span class="heading-index">03</span><h2 data-i18n="publications">论文发表</h2></div>
+        <div id="publication-filters" class="publication-filters" hidden></div>
+        <div id="publication-list" class="publication-list"></div>
+      </section>
+      <section id="projects" class="content-section">
+        <div class="section-heading"><span class="heading-index">04</span><h2 data-i18n="projects">精选项目</h2></div>
+        <div id="project-list" class="project-list"></div>
+      </section>
+      <section id="background" class="content-section">
+        <div class="section-heading"><span class="heading-index">05</span><h2 data-i18n="background">教育与经历</h2></div>
+        <div id="background-list" class="background-list"></div>
+      </section>
+      <section id="service" class="content-section" hidden>
+        <div class="section-heading"><span class="heading-index">—</span><h2 data-i18n="service">学术服务</h2></div>
+        <div id="service-list"></div>
+      </section>
+      <section id="outreach" class="content-section" hidden>
+        <div class="section-heading"><span class="heading-index">—</span><h2 data-i18n="outreach">科研传播</h2></div>
+        <div id="outreach-content"></div>
+      </section>
+      <section id="awards" class="content-section">
+        <div class="section-heading"><span class="heading-index">06</span><h2 data-i18n="awards">荣誉与交流</h2></div>
+        <div id="awards-list"></div>
+        <div id="academic-activities"></div>
+      </section>
+      <section id="contact" class="content-section contact-section">
+        <div class="section-heading"><span class="heading-index">07</span><h2 data-i18n="contact">联系方式</h2></div>
+        <p class="contact-intro" data-i18n="contactIntro">欢迎交流。你可以通过以下渠道找到我。</p>
+        <div id="contact-links" class="contact-links"></div>
+      </section>
+      <footer class="site-footer"><span id="copyright">© 2026 方鹏杰</span><span id="updated"></span></footer>
+    </main>
+  </div>
+  <noscript><p class="noscript-note">请启用 JavaScript 以查看全部内容并切换语言。Enable JavaScript for all sections and language switching.</p></noscript>
+</body>
+</html>
