@@ -5,7 +5,7 @@
   let language = document.documentElement.lang === 'en' ? 'en' : 'zh';
   const state = { type: 'all', topic: 'all' };
   function updateActiveSection() {
-    const nav = [...document.querySelectorAll('.section-nav a')];
+    const nav = [...document.querySelectorAll('.section-nav a[href^="#"]')];
     let active = 'about';
     for (const link of nav) {
       const target = document.getElementById(link.hash.slice(1));

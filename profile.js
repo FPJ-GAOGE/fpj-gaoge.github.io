@@ -590,6 +590,6 @@ window.HOMEPAGE = {
       }
     }
   ],
-  "updated": "2026-10-01",
+  "updated": "2026-10-03",
   "siteUrl": "https://fpj-gaoge.github.io/"
 };
