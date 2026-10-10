@@ -194,34 +194,16 @@ window.HOMEPAGE = {
       "year": "2024",
       "type": "Conference",
       "url": "https://doi.org/10.1109/CAC63892.2024.10865457",
+      "preprint": "https://arxiv.org/abs/2309.12089",
       "pdf": "https://arxiv.org/pdf/2309.12089",
+      "pdfLabel": {
+        "zh": "预印本 PDF",
+        "en": "Preprint PDF"
+      },
       "abstract": {
         "zh": "分层闭环规划框架分别处理高层规划与低层执行错误，通过大语言模型和反馈在机器人任务过程中进行自我修正。",
         "en": "A hierarchical closed-loop planner using language models and feedback to correct planning errors and action failures during robot task execution."
       },
-      "image": "./assets/papers/hicrisp.png",
-      "imageAlt": {
-        "zh": "HiCRISP 分层闭环自我修正规划框架",
-        "en": "HiCRISP hierarchical closed-loop self-correction framework"
-      },
-      "imageSource": "https://ming-bot.github.io/HiCRISP.github.io/",
-      "imageLicense": "CC BY-SA 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
-      "topic": "learning",
-      "project": "https://ming-bot.github.io/HiCRISP.github.io/",
-      "code": "https://github.com/ming-bot/HiCRISP"
-    },
-    {
-      "title": "HiCRISP: A Hierarchical Closed-Loop Robotic Intelligent Self-Correction Planner",
-      "authors": "Chenlin Ming, Jiacheng Lin, Pangkit Fong, Han Wang, Xiaoming Duan, Jianping He",
-      "venue": {
-        "zh": "arXiv:2309.12089 · CAC 2024 论文的预印本版本",
-        "en": "arXiv:2309.12089 · Preprint version of the CAC 2024 paper"
-      },
-      "year": "2023",
-      "type": "Preprint",
-      "url": "https://arxiv.org/abs/2309.12089",
-      "pdf": "https://arxiv.org/pdf/2309.12089",
       "image": "./assets/papers/hicrisp.png",
       "imageAlt": {
         "zh": "HiCRISP 分层闭环自我修正规划框架",
@@ -590,6 +572,6 @@ window.HOMEPAGE = {
       }
     }
   ],
-  "updated": "2026-10-03",
+  "updated": "2026-10-10",
   "siteUrl": "https://fpj-gaoge.github.io/"
 };
