@@ -1,6 +1,6 @@
 # Illustrative research animations
 
-The three GIFs and their still PNG covers are AI-generated illustrative scenes, not recordings of the owner's experiments. The cards explicitly label them as AI-generated scenes.
+The three GIFs and their still PNG covers are AI-generated illustrative scenes, not recordings of the owner's experiments. This source note records their provenance; the cards use descriptive alt text without a visible generation label.
 
 - `underwater.gif`: a subsea robot inspecting a pipeline and manipulating a valve.
 - `coordination.gif`: three mobile robots cooperating to transport and dock a shared payload.

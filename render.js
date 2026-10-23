@@ -10,8 +10,6 @@
   };
   strings.zh.beyond = '除了学术之外';
   strings.en.beyond = 'Beyond academia';
-  strings.zh.animationNote = 'AI 场景示意';
-  strings.en.animationNote = 'AI-generated scene';
   const topics = { underwater: 'topicUnderwater', learning: 'topicLearning', coordination: 'topicCoordination', systems: 'topicSystems', mechanics: 'topicMechanics' };
   const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const localized = (value, language) => typeof value === 'string' ? value : value?.[language] || value?.en || value?.zh || '';
@@ -50,12 +48,12 @@
     return `<svg class="research-diagram" viewBox="0 0 360 176" role="img" aria-label="${escape(t('diagramNote'))}: ${escape(t(kind === 'learning' ? 'topicLearning' : kind === 'coordination' ? 'topicCoordination' : 'topicUnderwater'))}">${content}</svg>`;
   }
   function renderResearch(data, language) {
-    const { t, l } = context(language);
+    const { l } = context(language);
     return (data.research || []).map((item,i)=>{
       const media=item.animation
         ? `<picture class="research-media"><source media="(prefers-reduced-motion: reduce)" srcset="${url(item.poster)}"><img src="${url(item.animation)}" width="360" height="225" loading="lazy" decoding="async" alt="${escape(l(item.animationAlt))}"></picture>`
         : diagram(item.visual || ['underwater','coordination','learning'][i],language);
-      return `<article class="research-item research-card" tabindex="0"><div class="research-card-top"><span class="research-index">0${i+1}</span><span>${escape(t(item.animation ? 'animationNote' : 'diagramNote'))}</span></div>${media}<h3>${escape(l(item.title))}</h3><p>${escape(l(item.description))}</p></article>`;
+      return `<article class="research-item research-card" tabindex="0"><div class="research-card-top"><span class="research-index">0${i+1}</span></div>${media}<h3>${escape(l(item.title))}</h3><p>${escape(l(item.description))}</p></article>`;
     }).join('');
   }
   function renderPublications(data, language, state = {}) {
@@ -72,7 +70,8 @@
     const { t, l } = context(language);
     const row = item => `<div class="news-row"><time datetime="${escape(item.date)}">${escape(item.date.replace(/-/g,'.'))}</time><p>${item.url ? link(item.url,l(item.text)) : escape(l(item.text))}</p></div>`;
     const news = data.news || [];
-    return news.slice(0,3).map(row).join('') + (news.length > 3 ? `<details class="older-news"><summary>${escape(t('older'))}</summary>${news.slice(3).map(row).join('')}</details>` : '');
+    const visibleCount = 5;
+    return news.slice(0,visibleCount).map(row).join('') + (news.length > visibleCount ? `<details class="older-news"><summary>${escape(t('older'))}</summary>${news.slice(visibleCount).map(row).join('')}</details>` : '');
   }
   function renderProjects(data, language) {
     const { t, l } = context(language), projects=data.projects || [];
@@ -121,7 +120,7 @@
   function renderBaseDocument(data, language) {
     const { title, description, canonical, origin } = metadata(data,language);
     const person = { '@context':'https://schema.org', '@type':'Person', name:data.name.en, alternateName:data.name.zh, url:origin, image:origin + data.photo.replace(/^\.\//,''), jobTitle:localized(data.role,'en'), affiliation:{'@type':'CollegeOrUniversity', name:'Shanghai Jiao Tong University'}, alumniOf:{'@type':'CollegeOrUniversity', name:"Xi'an Jiaotong University"}, knowsAbout:data.research.map(item=>localized(item.title,'en')), sameAs:[data.github,data.scholar] };
-    return `<!doctype html><html lang="${language === 'zh' ? 'zh-CN' : 'en'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${escape(description)}"><meta name="author" content="Fong Pangkit"><meta name="theme-color" content="#fbf6ef"><link rel="canonical" href="${escape(canonical)}"><link rel="alternate" hreflang="zh-CN" href="${escape(origin)}"><link rel="alternate" hreflang="en" href="${escape(origin)}en/"><link rel="alternate" hreflang="x-default" href="${escape(origin)}"><meta property="og:type" content="website"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${escape(canonical)}"><meta property="og:locale" content="${language === 'zh' ? 'zh_CN' : 'en_US'}"><title>${escape(title)}</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%239b4f35'/%3E%3Cpath d='M20 47V17h26v6H27v7h16v6H27v11z' fill='white'/%3E%3C/svg%3E"><link rel="stylesheet" href="/style.css?v=oct23-20261023"><script type="application/ld+json">${JSON.stringify(person).replace(/</g,'\\u003c')}</script><script defer src="/profile.js?v=oct23-20261023"></script><script defer src="/render.js?v=oct23-20261023"></script><script defer src="/app.js"></script></head><body>${renderBody(data,language)}</body></html>\n`;
+    return `<!doctype html><html lang="${language === 'zh' ? 'zh-CN' : 'en'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${escape(description)}"><meta name="author" content="Fong Pangkit"><meta name="theme-color" content="#fbf6ef"><link rel="canonical" href="${escape(canonical)}"><link rel="alternate" hreflang="zh-CN" href="${escape(origin)}"><link rel="alternate" hreflang="en" href="${escape(origin)}en/"><link rel="alternate" hreflang="x-default" href="${escape(origin)}"><meta property="og:type" content="website"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${escape(canonical)}"><meta property="og:locale" content="${language === 'zh' ? 'zh_CN' : 'en_US'}"><title>${escape(title)}</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%239b4f35'/%3E%3Cpath d='M20 47V17h26v6H27v7h16v6H27v11z' fill='white'/%3E%3C/svg%3E"><link rel="stylesheet" href="/style.css?v=oct23-20261023"><script type="application/ld+json">${JSON.stringify(person).replace(/</g,'\\u003c')}</script><script defer src="/profile.js?v=about-news-20261023"></script><script defer src="/render.js?v=about-news-20261023"></script><script defer src="/app.js"></script></head><body>${renderBody(data,language)}</body></html>\n`;
   }
   function renderDocument(data, language) {
     return renderBaseDocument(data, language).replace('<link rel="stylesheet" href="/style.css?v=oct23-20261023">', '<link rel="stylesheet" href="/style.css?v=oct23-20261023"><link rel="stylesheet" href="/enhancements.css?v=oct23-20261023">').replace(/[ \t]+$/gm, '');

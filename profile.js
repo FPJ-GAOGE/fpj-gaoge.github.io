@@ -18,8 +18,8 @@ window.HOMEPAGE = {
     "en": "Shanghai, China"
   },
   "bio": {
-    "zh": "我是上海交通大学控制科学与工程专业博士生，导师为何建平教授。我的研究围绕多智能体协同、机器人学习与水下机器人展开，关注感知、规划与控制如何在真实机器人系统中协同工作。\n\n此前，我于上海交通大学获得控制工程硕士学位，于西安交通大学获得飞行器设计专业学士学位。我也参与机器人平台的机械、电路与嵌入式开发，以及实验室的科研传播工作。",
-    "en": "I am a PhD student in Control Science and Engineering at Shanghai Jiao Tong University, advised by Prof. Jianping He. My research focuses on multi-agent coordination, robot learning, and underwater robotics, bringing perception, planning, and control together on real robotic systems.\n\nI received my master's degree in Control Engineering from Shanghai Jiao Tong University and my bachelor's degree in Aircraft Design from Xi'an Jiaotong University. My work also includes mechanical, electronic, and embedded development for robotic platforms, as well as science communication."
+    "zh": "我是上海交通大学自动化与感知学院控制科学与工程专业博士生，导师为何建平教授。此前，我于上海交通大学获得控制工程硕士学位，于西安交通大学获得飞行器设计专业学士学位。\n\n我的研究围绕基于学习-控制融合的水下机器人、多智能体协同，以及机器人学习与智能规划展开，关注感知、规划与控制如何在真实机器人系统中协同工作。我也参与机器人平台的机械、电路与嵌入式开发，将算法研究与实机验证相结合。\n\n学术服务方面，我担任 2026 年 DIVE 机器人学术论坛学生组委会主席，以及本科生课程《现代控制理论》助教，并为 IEEE TVT、ICRA、IROS 等期刊和会议审稿。我参与组织上海交通大学全球暑期学校、国际学术报告及来访教授交流，指导本科生开展莙政计划、大学生创新训练计划和致远未来学者项目。\n\n2026 年，我带领团队获得 MATE 世界水下机器人大赛中国区预选赛 PIONEER 组别冠军；2025 年获腾讯犀牛鸟开源人才培养计划混元大模型方向“优秀学员”。我也曾获中国国际大学生海洋水下机器人大赛 AUV 赛道第五名、“互联网+”大赛上海市银奖，以及全国大学生机械设计大赛三等奖。\n\n我曾赴杭州参加 IROS 2025、赴新加坡国立大学参加 PANNS，并在英国牛津参加 L4DC 2024 学术交流。科研之外，我持续参与 IWIN-FINS 实验室的科研传播，负责 B 站等平台的视频创作，分享机器人与 diffusion policy 等主题的研究和实践。",
+    "en": "I am a PhD student in Control Science and Engineering at the School of Automation and Intelligent Sensing, Shanghai Jiao Tong University, advised by Prof. Jianping He. I received my master's degree in Control Engineering from Shanghai Jiao Tong University and my bachelor's degree in Aircraft Design from Xi'an Jiaotong University.\n\nMy research focuses on learning–control fusion for underwater robotics, multi-agent coordination, and robot learning and planning. I study how perception, planning, and control work together on real robotic systems. My work also includes mechanical, electronic, and embedded development, connecting algorithm design with experiments on physical robots.\n\nI serve as Chair of the Student Organizing Committee for the 2026 DIVE Robotics Forum and as a teaching assistant for the undergraduate course Modern Control Theory. I review for IEEE Transactions on Vehicular Technology, ICRA, IROS, and related venues. I also help organize SJTU Global Summer School projects, international seminars, and visiting-professor exchanges, and mentor undergraduate projects through the Junzheng Program, undergraduate innovation training, and Zhiyuan Future Scholars Program.\n\nIn 2026, I led our team to the PIONEER class championship at the China regional qualifier of the MATE ROV Competition. In 2025, I was named an Outstanding Trainee in the Hunyuan LLM track of the Tencent Rhino-Bird Open-Source Talent Program. Other awards include 5th place in the AUV track of the China International University Underwater Robotics Competition, a Shanghai Silver Award in the Internet+ Innovation and Entrepreneurship Competition, and a third prize in the National College Students' Mechanical Design Competition.\n\nI have participated in IROS 2025 in Hangzhou, PANNS at the National University of Singapore, and L4DC 2024 in Oxford, UK. Alongside my research, I create videos for IWIN-FINS Lab on Bilibili and other platforms, sharing research and hands-on work in robotics and topics such as diffusion policies."
   },
   "photo": "./assets/portrait.jpg",
   "cv": "/cv/",
@@ -31,6 +31,13 @@ window.HOMEPAGE = {
     "Pang-Kit Fong"
   ],
   "news": [
+    {
+      "date": "2026",
+      "text": {
+        "zh": "担任 2026 年 DIVE 机器人学术论坛学生组委会主席。",
+        "en": "Serving as Chair of the Student Organizing Committee for the 2026 DIVE Robotics Forum."
+      }
+    },
     {
       "date": "2026-09-20",
       "text": {
