@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-labelledby="title desc">
+<title id="title">Thermal tuning and defect-based energy harvesting</title><desc id="desc">Original conceptual illustration of a phononic crystal plate with a defect and a piezoelectric harvesting circuit, based on the paper description. This is not experimental or simulation data.</desc>
+<defs><pattern id="cells" width="46" height="46" patternUnits="userSpaceOnUse"><circle cx="23" cy="23" r="12" fill="#b5bec7" stroke="#7e8b99" stroke-width="2"/></pattern><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 8 4 0 8Z" fill="#9b4f35"/></marker></defs>
+<rect width="800" height="500" fill="#fffdf9"/><g font-family="Arial, sans-serif" fill="#3d332d"><text x="40" y="50" font-size="25" font-weight="700">THERMALLY TUNED PHONONIC PLATE</text>
+<path d="M140 84v30m95-30v30m95-30v30" stroke="#9b4f35" stroke-width="4" marker-end="url(#arrow)"/><text x="364" y="105" font-size="20" fill="#9b4f35">Thermal load</text>
+<rect x="57" y="139" width="388" height="250" rx="10" fill="#e9e3da" stroke="#b7a99a" stroke-width="3"/><rect x="67" y="148" width="368" height="230" fill="url(#cells)"/>
+<circle cx="251" cy="263" r="51" fill="#e9e3da"/><circle cx="251" cy="263" r="35" fill="#ebcba9" opacity=".7"/><circle cx="251" cy="263" r="24" fill="none" stroke="#b48a4e" stroke-width="3"/><circle cx="251" cy="263" r="9" fill="#9b4f35"/>
+<path d="M251 239v-45h97" fill="none" stroke="#9b4f35" stroke-width="2"/><text x="289" y="182" font-size="18" fill="#7c3e2a">Defect cell</text>
+<path d="M289 263H520" stroke="#9b4f35" stroke-width="4" marker-end="url(#arrow)"/><rect x="464" y="215" width="108" height="98" rx="10" fill="#f3e2d5" stroke="#9b4f35" stroke-width="2"/><text x="518" y="254" font-size="19" text-anchor="middle">Piezoelectric</text><text x="518" y="282" font-size="19" text-anchor="middle">patch</text>
+<path d="M572 244h88v32m0 66v30H572m88-96-8 9 16 9-16 9 16 9-16 9 8 11" fill="none" stroke="#7c3e2a" stroke-width="4"/><text x="690" y="315" font-size="22">R</text>
+<text x="251" y="423" text-anchor="middle" font-size="20">Defect-localized vibration</text><text x="614" y="423" text-anchor="middle" font-size="20">Electrical energy harvesting</text>
+<text x="40" y="472" font-size="16" fill="#706055">CONCEPTUAL SCHEMATIC · NOT TO SCALE</text></g></svg>

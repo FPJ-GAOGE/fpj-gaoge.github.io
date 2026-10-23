@@ -10,6 +10,8 @@
   };
   strings.zh.beyond = '除了学术之外';
   strings.en.beyond = 'Beyond academia';
+  strings.zh.animationNote = 'AI 场景示意';
+  strings.en.animationNote = 'AI-generated scene';
   const topics = { underwater: 'topicUnderwater', learning: 'topicLearning', coordination: 'topicCoordination', systems: 'topicSystems', mechanics: 'topicMechanics' };
   const escape = value => String(value ?? '').replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
   const localized = (value, language) => typeof value === 'string' ? value : value?.[language] || value?.en || value?.zh || '';
@@ -33,7 +35,7 @@
     if (!url(item.image)) return '';
     const { t, l } = context(language);
     const credit = item.imageLicense ? ` · ${link(item.imageLicenseUrl, item.imageLicense)}` : '';
-    return `<figure class="${className}"><a href="${url(item.image)}" target="_blank" rel="noopener noreferrer" aria-label="${escape(l(item.imageAlt) || t('figureAlt'))}"><img src="${url(item.image)}" alt="${escape(l(item.imageAlt) || t('figureAlt'))}" loading="lazy" decoding="async" width="640" height="360"></a><figcaption>${link(item.imageSource || item.url, t('figure'))}${credit}</figcaption></figure>`;
+    return `<figure class="${className}"><a href="${url(item.image)}" target="_blank" rel="noopener noreferrer" aria-label="${escape(l(item.imageAlt) || t('figureAlt'))}"><img src="${url(item.image)}" alt="${escape(l(item.imageAlt) || t('figureAlt'))}" loading="lazy" decoding="async" width="640" height="360"></a><figcaption>${link(item.imageSource || item.url, l(item.imageCaption) || t('figure'))}${credit}</figcaption></figure>`;
   }
   function diagram(kind, language) {
     const { t } = context(language);
@@ -49,7 +51,12 @@
   }
   function renderResearch(data, language) {
     const { t, l } = context(language);
-    return (data.research || []).map((item, i) => `<article class="research-item research-card" tabindex="0"><div class="research-card-top"><span class="research-index">0${i + 1}</span><span>${escape(t('diagramNote'))}</span></div>${diagram(item.visual || ['underwater','coordination','learning'][i],language)}<h3>${escape(l(item.title))}</h3><p>${escape(l(item.description))}</p></article>`).join('');
+    return (data.research || []).map((item,i)=>{
+      const media=item.animation
+        ? `<picture class="research-media"><source media="(prefers-reduced-motion: reduce)" srcset="${url(item.poster)}"><img src="${url(item.animation)}" width="360" height="225" loading="lazy" decoding="async" alt="${escape(l(item.animationAlt))}"></picture>`
+        : diagram(item.visual || ['underwater','coordination','learning'][i],language);
+      return `<article class="research-item research-card" tabindex="0"><div class="research-card-top"><span class="research-index">0${i+1}</span><span>${escape(t(item.animation ? 'animationNote' : 'diagramNote'))}</span></div>${media}<h3>${escape(l(item.title))}</h3><p>${escape(l(item.description))}</p></article>`;
+    }).join('');
   }
   function renderPublications(data, language, state = {}) {
     const { t, l } = context(language);
@@ -68,12 +75,18 @@
     return news.slice(0,3).map(row).join('') + (news.length > 3 ? `<details class="older-news"><summary>${escape(t('older'))}</summary>${news.slice(3).map(row).join('')}</details>` : '');
   }
   function renderProjects(data, language) {
-    const { t, l } = context(language);
-    return (data.projects || []).map(project=>`<article class="project${project.image ? ' project-with-image' : ''}">${figure(project,language,'project-figure')}<div class="project-body"><div class="project-meta">${escape(l(project.category))}${project.period ? ' · ' + escape(l(project.period)) : ''}</div><h3>${escape(l(project.title))}</h3><p>${escape(l(project.description))}</p><div class="project-bottom"><div class="tags">${(project.tags || []).map(tag=>`<span class="tag">${escape(tag)}</span>`).join('')}</div>${link(project.url,t('projectLink'))}</div></div></article>`).join('');
+    const { t, l } = context(language), projects=data.projects || [];
+    const cards=projects.filter(p=>url(p.code)).map(p=>`<article class="project${p.image ? ' project-with-image' : ''}">${figure(p,language,'project-figure')}<div class="project-body"><div class="project-meta">${escape(l(p.category))}${p.period ? ' · '+escape(l(p.period)) : ''}</div><h3>${escape(l(p.title))}</h3><p>${escape(l(p.description))}</p><div class="project-bottom"><div class="tags">${(p.tags || []).map(tag=>`<span class="tag">${escape(tag)}</span>`).join('')}</div><div class="project-links">${link(p.code,t('code'))}${p.url && p.url!==p.code ? link(p.url,t('projectLink')) : ''}</div></div></div></article>`).join('');
+    const rows=projects.filter(p=>!url(p.code)).map(p=>`<article class="news-row project-update"><span class="project-date">${escape(l(p.period))}</span><div><h3>${p.url ? link(p.url,l(p.title)) : escape(l(p.title))}</h3><p>${escape(l(p.description))}</p></div></article>`).join('');
+    return cards+(rows ? `<div class="project-updates">${rows}</div>` : '');
+  }
+  function renderService(entries, language) {
+    const { l } = context(language);
+    return entries.map(item=>`<div class="news-row"><span class="service-date">${escape(l(item.period))}</span><p>${escape(l(item.text ?? item))}</p></div>`).join('');
   }
   function timeline(entries, language, heading) {
-    const { t, l } = context(language);
-    return entries?.length ? `<div class="timeline-group"><h3 class="timeline-label">${escape(t(heading))}</h3>${entries.map(entry=>`<div class="timeline-entry"><time>${escape(l(entry.period))}</time><div class="timeline-content">${entry.initials ? `<span class="institution-mark" aria-hidden="true">${escape(entry.initials)}</span>` : ''}<div><h3>${escape(l(entry.title))}</h3><p>${escape(l(entry.organization))}</p>${entry.description ? `<p>${escape(l(entry.description))}</p>` : ''}</div></div></div>`).join('')}</div>` : '';
+    const { t, l }=context(language);
+    return entries?.length ? `<div class="timeline-group"><h3 class="timeline-label">${escape(t(heading))}</h3>${entries.map(entry=>`<div class="timeline-entry"><time>${escape(l(entry.period))}</time><div class="timeline-content">${entry.logo ? `<span class="institution-mark institution-logo"><img src="${url(entry.logo)}" alt="${escape(l(entry.logoAlt))}" width="54" height="54" loading="lazy"></span>` : entry.initials ? `<span class="institution-mark" aria-hidden="true">${escape(entry.initials)}</span>` : ''}<div><h3>${escape(l(entry.title))}</h3><p>${escape(l(entry.organization))}</p>${entry.description ? `<p>${escape(l(entry.description))}</p>` : ''}</div></div></div>`).join('')}</div>` : '';
   }
   function section(id, label, number, content, language, extra = '') {
     const { t } = context(language);
@@ -82,7 +95,7 @@
   function renderBody(data, language, state = {}) {
     const { t, l } = context(language), papers = renderPublications(data,language,state);
     const beyondPath = language === 'zh' ? '/beyond/' : '/beyond/en/';
-    const sections = [['about','about','01'],['news','news','—'],['research','research','02'],['publications','publications','03'],['projects','projects','04'],['background','background','05'],['awards','awards','06'],['outreach','outreach','—']].filter(([id]) => !(id==='news' && !data.news?.length) && !(id==='outreach' && !data.outreach));
+    const sections = [['about','about','01'],['news','news','—'],['research','research','02'],['publications','publications','03'],['projects','projects','04'],['background','background','05'],['service','service','—'],['awards','awards','06'],['outreach','outreach','—']].filter(([id]) => !(id==='news' && !data.news?.length) && !(id==='service' && !data.service?.length) && !(id==='outreach' && !data.outreach));
     const nav = sections.map(([id,label,index])=>`<a href="#${id}"${id==='about' ? ' class="active" aria-current="location"' : ''}><span>${escape(t(label))}</span><span class="section-number">${index}</span></a>`).join('') + link(beyondPath,t('beyond'),'beyond-link');
     const news = data.news?.length ? section('news','news','—',`<div id="news-list" class="news-list">${renderNews(data,language)}</div>`,language) : '';
     const outreach = data.outreach ? section('outreach','outreach','—',`<article class="outreach-card"><p class="eyebrow">${escape(l(data.outreach.period))}</p><h3>${escape(l(data.outreach.title))}</h3><p>${escape(l(data.outreach.description))}</p>${link(data.outreach.url,t('outreachLink'),'outreach-button')}</article>`,language) : '';
@@ -95,7 +108,7 @@
     ${section('publications','publications','03',`<p class="publication-intro">${link(data.scholar,t('scholarNote'))} · ${escape(t('contribution'))}</p><div id="publication-filters" class="publication-filters">${papers.filters}</div><p id="publication-count" class="publication-count" role="status" aria-live="polite">${escape(papers.count)}</p><div id="publication-list" class="publication-list">${papers.list}</div>`,language)}
     ${section('projects','projects','04',`<div class="project-list">${renderProjects(data,language)}</div>`,language)}
     ${section('background','background','05',`<div id="background-list">${timeline(data.education,language,'education')}${timeline(data.experience,language,'experience')}</div>`,language)}
-    ${data.service?.length ? section('service','service','—',data.service.map(item=>`<p>${escape(l(item))}</p>`).join(''),language) : ''}
+    ${data.service?.length ? section('service','service','—',renderService(data.service,language),language) : ''}
     ${section('awards','awards','06',awards,language)}${outreach}
     <footer class="site-footer"><span>© ${escape(data.updated?.slice(0,4) || '2026')} ${escape(l(data.name))}</span><span>${escape(t('updated'))} ${escape(data.updated)}</span></footer></main></div>`;
   }
@@ -108,10 +121,10 @@
   function renderBaseDocument(data, language) {
     const { title, description, canonical, origin } = metadata(data,language);
     const person = { '@context':'https://schema.org', '@type':'Person', name:data.name.en, alternateName:data.name.zh, url:origin, image:origin + data.photo.replace(/^\.\//,''), jobTitle:localized(data.role,'en'), affiliation:{'@type':'CollegeOrUniversity', name:'Shanghai Jiao Tong University'}, alumniOf:{'@type':'CollegeOrUniversity', name:"Xi'an Jiaotong University"}, knowsAbout:data.research.map(item=>localized(item.title,'en')), sameAs:[data.github,data.scholar] };
-    return `<!doctype html><html lang="${language === 'zh' ? 'zh-CN' : 'en'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${escape(description)}"><meta name="author" content="Fong Pangkit"><meta name="theme-color" content="#fbf6ef"><link rel="canonical" href="${escape(canonical)}"><link rel="alternate" hreflang="zh-CN" href="${escape(origin)}"><link rel="alternate" hreflang="en" href="${escape(origin)}en/"><link rel="alternate" hreflang="x-default" href="${escape(origin)}"><meta property="og:type" content="website"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${escape(canonical)}"><meta property="og:locale" content="${language === 'zh' ? 'zh_CN' : 'en_US'}"><title>${escape(title)}</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%239b4f35'/%3E%3Cpath d='M20 47V17h26v6H27v7h16v6H27v11z' fill='white'/%3E%3C/svg%3E"><link rel="stylesheet" href="/style.css?v=warm-20261003"><script type="application/ld+json">${JSON.stringify(person).replace(/</g,'\\u003c')}</script><script defer src="/profile.js?v=hicrisp-20261010"></script><script defer src="/render.js?v=hicrisp-20261010"></script><script defer src="/app.js"></script></head><body>${renderBody(data,language)}</body></html>\n`;
+    return `<!doctype html><html lang="${language === 'zh' ? 'zh-CN' : 'en'}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="${escape(description)}"><meta name="author" content="Fong Pangkit"><meta name="theme-color" content="#fbf6ef"><link rel="canonical" href="${escape(canonical)}"><link rel="alternate" hreflang="zh-CN" href="${escape(origin)}"><link rel="alternate" hreflang="en" href="${escape(origin)}en/"><link rel="alternate" hreflang="x-default" href="${escape(origin)}"><meta property="og:type" content="website"><meta property="og:title" content="${escape(title)}"><meta property="og:description" content="${escape(description)}"><meta property="og:url" content="${escape(canonical)}"><meta property="og:locale" content="${language === 'zh' ? 'zh_CN' : 'en_US'}"><title>${escape(title)}</title><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%239b4f35'/%3E%3Cpath d='M20 47V17h26v6H27v7h16v6H27v11z' fill='white'/%3E%3C/svg%3E"><link rel="stylesheet" href="/style.css?v=oct23-20261023"><script type="application/ld+json">${JSON.stringify(person).replace(/</g,'\\u003c')}</script><script defer src="/profile.js?v=oct23-20261023"></script><script defer src="/render.js?v=oct23-20261023"></script><script defer src="/app.js"></script></head><body>${renderBody(data,language)}</body></html>\n`;
   }
   function renderDocument(data, language) {
-    return renderBaseDocument(data, language).replace('<link rel="stylesheet" href="/style.css?v=warm-20261003">', '<link rel="stylesheet" href="/style.css?v=warm-20261003"><link rel="stylesheet" href="/enhancements.css?v=warm-20261003">').replace(/[ \t]+$/gm, '');
+    return renderBaseDocument(data, language).replace('<link rel="stylesheet" href="/style.css?v=oct23-20261023">', '<link rel="stylesheet" href="/style.css?v=oct23-20261023"><link rel="stylesheet" href="/enhancements.css?v=oct23-20261023">').replace(/[ \t]+$/gm, '');
   }
   root.HOMEPAGE_VIEW = { strings, topics, escape, localized, link, context, profileLinks, renderPublications, renderBody, renderDocument, timeline, metadata };
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -6,6 +6,8 @@ Selected for identifying personal interests. Logos and posters belong to their r
 
 Natural Earth 1:50m administrative geography, public domain. [Dataset](https://github.com/nvkelso/natural-earth-vector/blob/master/geojson/ne_50m_admin_0_countries.geojson) · [Terms](https://www.naturalearthdata.com/about/terms-of-use/). General geometry simplified with shared topology (20% of vertices); Malta, Liechtenstein and Singapore retain their original geometry. Their map markers come from the Natural Earth tiny-country layer. The page uses an equirectangular projection.
 
+Visited highlights cover home territory, with overseas dependencies drawn separately as grey, unvisited land. In particular, France includes metropolitan France and Corsica while French Guiana and other overseas polygons remain grey. Whole polygon components are selected by their geographic region; boundaries are not redrawn. Armenia is included among the 28 visited destinations.
+
 ## Team logos
 
 - **Houston Rockets**: [source page](https://www.nba.com/team/1610612745/rockets), [original asset](https://cdn.nba.com/logos/nba/1610612745/primary/L/logo.svg). Houston Rockets / NBA.
@@ -17,6 +19,9 @@ Natural Earth 1:50m administrative geography, public domain. [Dataset](https://g
 The FC Barcelona symbol is packaged as a standalone SVG with original paths and colours unchanged.
 
 ## Posters
+
+- **Interstellar / 星际穿越**: [source page](https://www.themoviedb.org/movie/157336-interstellar/images/posters?language=en-US), [original poster](https://image.tmdb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg). Copyrighted film promotional artwork.
+- **The Long Season / 漫长的季节**: [source page](https://zh.wikipedia.org/wiki/漫长的季节), [original poster](https://upload.wikimedia.org/wikipedia/zh/5/5d/The_Long_Season_poster.jpg). Copyrighted series promotional artwork.
 
 - **Manchester by the Sea / 海边的曼彻斯特**: [source page](https://www.themoviedb.org/movie/334541-manchester-by-the-sea/images/posters?language=en-US), [original asset](https://image.tmdb.org/t/p/original/e8daDzP0vFOnGyKmve95Yv0D0io.jpg). Copyrighted promotional poster; Roadside site says All rights reserved. No open image license found.
 - **The Secret Life of Walter Mitty / 白日梦想家**: [source page](https://www.20thcenturystudios.com/movies/the-secret-life-of-walter-mitty), [original asset](https://lumiere-a.akamaihd.net/v1/images/image_b49633a4.jpeg?region=0%2C0%2C1400%2C2100). Copyrighted 20th Century Studios / Disney promotional image; no open image license found.

@@ -48,6 +48,20 @@ window.HOMEPAGE = {
       "url": "https://arxiv.org/abs/2609.20731"
     },
     {
+      "date": "2026-04",
+      "text": {
+        "zh": "带队获 MATE 世界水下机器人大赛中国区预选赛 PIONEER 组别冠军。",
+        "en": "Led the team to the PIONEER class championship at the China regional qualifier of the MATE ROV Competition."
+      }
+    },
+    {
+      "date": "2025-10",
+      "text": {
+        "zh": "获腾讯犀牛鸟开源人才培养计划混元大模型方向“优秀学员”。",
+        "en": "Named an Outstanding Trainee in the Hunyuan large language model track of the Tencent Rhino-Bird Open-Source Talent Program."
+      }
+    },
+    {
       "date": "2025-07",
       "text": {
         "zh": "参与中国国际大学生海洋水下机器人大赛，获 AUV 赛道第五名。",
@@ -80,14 +94,20 @@ window.HOMEPAGE = {
   "research": [
     {
       "title": {
-        "zh": "水下机器人与感知控制",
-        "en": "Underwater Robotics"
+        "zh": "基于学习-控制融合的水下机器人",
+        "en": "Learning–Control Fusion for Underwater Robotics"
       },
       "description": {
-        "zh": "视觉定位、目标跟踪、多传感器融合，以及面向真实水下平台的建模与预测控制。",
-        "en": "Visual localization, target tracking, sensor fusion, and predictive control on real underwater platforms."
+        "zh": "融合学习与控制方法，研究复杂水下环境中的感知、状态估计、任务执行与机器人控制。",
+        "en": "Combining learning and control for perception, state estimation, task execution, and robot control in complex underwater environments."
       },
-      "visual": "underwater"
+      "visual": "underwater",
+      "animation": "./assets/research/underwater.gif",
+      "poster": "./assets/research/underwater.png",
+      "animationAlt": {
+        "zh": "水下机器人在海底检查管线并操作阀门的生成示意动画",
+        "en": "Generated illustrative animation of an underwater robot inspecting a pipeline and manipulating a valve"
+      }
     },
     {
       "title": {
@@ -98,7 +118,13 @@ window.HOMEPAGE = {
         "zh": "分布式优化、覆盖与任务分配，研究通信与感知约束下的多机器人协作。",
         "en": "Distributed optimization, coverage, and task allocation under communication and sensing constraints."
       },
-      "visual": "coordination"
+      "visual": "coordination",
+      "animation": "./assets/research/coordination.gif",
+      "poster": "./assets/research/coordination.png",
+      "animationAlt": {
+        "zh": "多台移动机器人协同搬运与对接设备的生成示意动画",
+        "en": "Generated illustrative animation of mobile robots cooperating to transport and dock equipment"
+      }
     },
     {
       "title": {
@@ -109,7 +135,13 @@ window.HOMEPAGE = {
         "zh": "结合强化学习、大语言模型和闭环反馈，探索从任务规划到实机控制的方法。",
         "en": "Reinforcement learning, language-model-based planning, and closed-loop feedback for real-world robot control."
       },
-      "visual": "learning"
+      "visual": "learning",
+      "animation": "./assets/research/learning.gif",
+      "poster": "./assets/research/learning.png",
+      "animationAlt": {
+        "zh": "机械臂抓取、移动并放置物块的机器人学习场景示意动画",
+        "en": "Generated illustrative robot-learning animation of an arm picking and placing an object"
+      }
     }
   ],
   "publications": [
@@ -131,7 +163,9 @@ window.HOMEPAGE = {
         "en": "FinsSim overview: simulation, robot learning, and physical deployment"
       },
       "imageSource": "https://arxiv.org/html/2609.23943v1#S2.F1",
-      "topic": "underwater"
+      "topic": "underwater",
+      "code": "https://github.com/IWIN-FINS/FinsSim",
+      "project": "https://sherlocknolan.github.io/projects/FinsSim/"
     },
     {
       "title": "Underwater Visual Target Tracking with Target-Specific Depth Estimation and Adaptive Model-Fusion Predictive Control",
@@ -165,7 +199,15 @@ window.HOMEPAGE = {
         "zh": "提出 FineMote 固件生成框架，利用编译期信息为树状设备模型确定执行顺序，分析时序约束与决策延迟。",
         "en": "FineMote generates firmware with compile-time scheduling for tree-structured robot device models, with analysis of deadlines, precedence, and decision latency."
       },
-      "topic": "systems"
+      "topic": "systems",
+      "image": "./assets/papers/firmware-framework.png",
+      "imageAlt": {
+        "zh": "FineMote 设备、控制器与总线代理的固件框架示意图（论文图 2b）",
+        "en": "FineMote device, controller and bus-agent framework (paper Figure 2b)"
+      },
+      "imageSource": "https://arxiv.org/html/2608.04600v1#S2.F2",
+      "imageLicense": "CC BY-NC-SA 4.0",
+      "imageLicenseUrl": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
     },
     {
       "title": "Aucamp: An Underwater Camera-Based Multi-Robot Platform with Low-Cost, Distributed, and Robust Localization",
@@ -227,7 +269,17 @@ window.HOMEPAGE = {
         "zh": "研究热载荷下声子晶体板的多频缺陷态与振动能量采集，分析刚度变化对波局域和采集性能的影响。",
         "en": "A study of thermal stiffness changes, defect wave localization, and vibration energy harvesting in phononic crystal plates."
       },
-      "topic": "mechanics"
+      "topic": "mechanics",
+      "image": "./assets/papers/phononic-harvesting.svg",
+      "imageAlt": {
+        "zh": "热调控声子晶体板缺陷局域与压电能量采集的原创示意图",
+        "en": "Original schematic of thermally tuned phononic defect localization and piezoelectric energy harvesting"
+      },
+      "imageSource": "https://doi.org/10.1016/j.ijmecsci.2022.107253",
+      "imageCaption": {
+        "zh": "原创研究示意图 · 论文",
+        "en": "Original research schematic · Paper"
+      }
     },
     {
       "title": "Optimal Attack Against Coverage Path Planning in Multi-robot System",
@@ -240,7 +292,17 @@ window.HOMEPAGE = {
         "zh": "研究多机器人覆盖任务的对抗场景，以改进广度优先搜索在离散环境中求解最优攻击路径。",
         "en": "An optimal attack-planning approach for adversarial multi-robot coverage tasks using improved breadth-first search."
       },
-      "topic": "coordination"
+      "topic": "coordination",
+      "image": "./assets/papers/coverage-attack.svg",
+      "imageAlt": {
+        "zh": "障碍环境下多机器人覆盖路线与改进 BFS 攻击路径搜索的原创示意图",
+        "en": "Original schematic of multi-robot coverage and improved-BFS attack-path search in an obstacle environment"
+      },
+      "imageSource": "https://doi.org/10.1007/978-981-19-3998-3_164",
+      "imageCaption": {
+        "zh": "原创研究示意图 · 论文",
+        "en": "Original research schematic · Paper"
+      }
     }
   ],
   "projects": [
@@ -250,8 +312,8 @@ window.HOMEPAGE = {
         "en": "FinsSim · Underwater Robot Simulation & Learning"
       },
       "category": {
-        "zh": "研究项目",
-        "en": "RESEARCH"
+        "zh": "开源项目",
+        "en": "OPEN SOURCE"
       },
       "period": "2026",
       "description": {
@@ -263,43 +325,14 @@ window.HOMEPAGE = {
         "Robot Learning",
         "ROS 2"
       ],
-      "url": "https://arxiv.org/abs/2609.23943",
+      "url": "https://sherlocknolan.github.io/projects/FinsSim/",
       "image": "./assets/papers/finssim.png",
       "imageAlt": {
         "zh": "FinsSim 仿真、机器人学习与实机部署流程总览",
         "en": "FinsSim overview: simulation, robot learning, and physical deployment"
       },
-      "imageSource": "https://arxiv.org/html/2609.23943v1#S2.F1"
-    },
-    {
-      "title": {
-        "zh": "分布式水下多机器人平台",
-        "en": "Distributed Underwater Multi-Robot Platform"
-      },
-      "category": {
-        "zh": "研究项目",
-        "en": "RESEARCH"
-      },
-      "period": {
-        "zh": "2023.12–至今",
-        "en": "2023.12–present"
-      },
-      "description": {
-        "zh": "带领团队搭建水下多机器人平台，研究自主感知补光、目标跟踪、多传感器融合、视觉伺服与协同控制。",
-        "en": "Leading underwater multi-robot platform development for active visual sensing, target tracking, sensor fusion, visual servoing, and cooperative control."
-      },
-      "tags": [
-        "Underwater Robotics",
-        "Perception",
-        "Control"
-      ],
-      "url": "https://arxiv.org/abs/2506.09876",
-      "image": "./assets/papers/aucamp.png",
-      "imageAlt": {
-        "zh": "Aucamp 水下多机器人平台总览",
-        "en": "Overview of the Aucamp underwater multi-robot platform"
-      },
-      "imageSource": "https://arxiv.org/html/2506.09876v1#S0.F1"
+      "imageSource": "https://arxiv.org/html/2609.23943v1#S2.F1",
+      "code": "https://github.com/IWIN-FINS/FinsSim"
     },
     {
       "title": {
@@ -326,36 +359,8 @@ window.HOMEPAGE = {
         "zh": "水下视觉跟踪平台与任务示意",
         "en": "Underwater visual target-tracking platform and task overview"
       },
-      "imageSource": "https://arxiv.org/html/2609.20731v1#S1.F1"
-    },
-    {
-      "title": {
-        "zh": "大语言模型驱动的分层闭环机器人规划",
-        "en": "Hierarchical Closed-Loop Planning with LLMs"
-      },
-      "category": {
-        "zh": "研究项目",
-        "en": "RESEARCH"
-      },
-      "period": "2023.09–2024.03",
-      "description": {
-        "zh": "参与 HiCRISP 研究，以高层与低层反馈处理规划和执行错误，支持机器人在任务中修正步骤并重新规划。",
-        "en": "Contributed to HiCRISP, separating planning and action feedback to support self-correction during task execution."
-      },
-      "tags": [
-        "LLMs",
-        "Planning",
-        "Closed Loop"
-      ],
-      "url": "https://ming-bot.github.io/HiCRISP.github.io/",
-      "image": "./assets/papers/hicrisp.png",
-      "imageAlt": {
-        "zh": "HiCRISP 分层闭环自我修正规划框架",
-        "en": "HiCRISP hierarchical closed-loop self-correction framework"
-      },
-      "imageSource": "https://ming-bot.github.io/HiCRISP.github.io/",
-      "imageLicense": "CC BY-SA 4.0",
-      "imageLicenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/"
+      "imageSource": "https://arxiv.org/html/2609.20731v1#S1.F1",
+      "code": "https://github.com/FPJ-GAOGE/MPC-fused-model"
     },
     {
       "title": {
@@ -376,48 +381,6 @@ window.HOMEPAGE = {
         "Distributed Optimization",
         "Embedded Systems"
       ]
-    },
-    {
-      "title": {
-        "zh": "多机器人覆盖路径规划的最优攻击",
-        "en": "Optimal Attacks on Multi-Robot Coverage Planning"
-      },
-      "category": {
-        "zh": "研究项目",
-        "en": "RESEARCH"
-      },
-      "period": "2020.09–2022.09",
-      "description": {
-        "zh": "在对抗场景下，结合改进 BFS、最小代价排序和剪枝求解覆盖任务的最优攻击问题，并分析算法最优性。",
-        "en": "Designed optimal adversarial strategies for coverage tasks using improved BFS, cost ordering, and pruning, with optimality analysis."
-      },
-      "tags": [
-        "Multi-Robot Systems",
-        "Path Planning",
-        "Optimization"
-      ],
-      "url": "https://doi.org/10.1007/978-981-19-3998-3_164"
-    },
-    {
-      "title": {
-        "zh": "声子晶体板振动能量采集",
-        "en": "Energy Harvesting with Phononic Crystal Plates"
-      },
-      "category": {
-        "zh": "研究项目",
-        "en": "RESEARCH"
-      },
-      "period": "2018.12–2020.06",
-      "description": {
-        "zh": "研究热效应对声子晶体板的影响，使用 COMSOL 开展多物理场仿真，以 Origin 进行数据处理和绘图。",
-        "en": "Investigated thermal effects on phononic crystal plates using COMSOL multiphysics simulation and Origin data analysis."
-      },
-      "tags": [
-        "Phononic Crystals",
-        "COMSOL",
-        "Energy Harvesting"
-      ],
-      "url": "https://doi.org/10.1016/j.ijmecsci.2022.107253"
     },
     {
       "title": {
@@ -458,6 +421,21 @@ window.HOMEPAGE = {
         "Cooperative Control",
         "Coverage"
       ]
+    },
+    {
+      "title": {
+        "zh": "小型水下机器人智能作业系统研发",
+        "en": "Intelligent Operations for Small Underwater Robots"
+      },
+      "category": {
+        "zh": "研发项目",
+        "en": "R&D"
+      },
+      "period": "2026.05",
+      "description": {
+        "zh": "参与小型水下机器人智能作业系统研发项目。",
+        "en": "Contributing to R&D on intelligent operation systems for small underwater robots."
+      }
     }
   ],
   "education": [
@@ -478,7 +456,12 @@ window.HOMEPAGE = {
         "zh": "导师：何建平教授；多智能体协同、机器人学习、水下机器人。",
         "en": "Advisor: Prof. Jianping He. Multi-agent coordination, robot learning, and underwater robotics."
       },
-      "initials": "SJTU"
+      "initials": "SJTU",
+      "logo": "./assets/institutions/sjtu.png",
+      "logoAlt": {
+        "zh": "上海交通大学校徽",
+        "en": "Shanghai Jiao Tong University seal"
+      }
     },
     {
       "period": "2020.09–2023.06",
@@ -494,10 +477,15 @@ window.HOMEPAGE = {
         "zh": "导师：何建平教授；多智能体与分布式优化。",
         "en": "Advisor: Prof. Jianping He. Multi-agent systems and distributed optimization."
       },
-      "initials": "SJTU"
+      "initials": "SJTU",
+      "logo": "./assets/institutions/sjtu.png",
+      "logoAlt": {
+        "zh": "上海交通大学校徽",
+        "en": "Shanghai Jiao Tong University seal"
+      }
     },
     {
-      "period": "2015.09–2020.06",
+      "period": "2016.09–2020.06",
       "title": {
         "zh": "学士 · 飞行器设计",
         "en": "Bachelor's · Aircraft Design"
@@ -506,11 +494,71 @@ window.HOMEPAGE = {
         "zh": "西安交通大学 · 航空航天系",
         "en": "Xi'an Jiaotong University · Department of Aerospace Engineering"
       },
-      "initials": "XJTU"
+      "initials": "XJTU",
+      "logo": "./assets/institutions/xjtu.png",
+      "logoAlt": {
+        "zh": "西安交通大学校徽",
+        "en": "Xi’an Jiaotong University seal"
+      }
     }
   ],
   "experience": [],
-  "service": [],
+  "service": [
+    {
+      "period": "2026",
+      "text": {
+        "zh": "DIVE 机器人学术论坛学生组委会主席。",
+        "en": "Chair of the Student Organizing Committee, DIVE Robotics Forum."
+      }
+    },
+    {
+      "period": {
+        "zh": "2025–至今",
+        "en": "2025–present"
+      },
+      "text": {
+        "zh": "本科生课程《现代控制理论》助教。",
+        "en": "Teaching Assistant for the undergraduate course Modern Control Theory."
+      }
+    },
+    {
+      "period": "2024–2026",
+      "text": {
+        "zh": "组织十余位国际学生参与上海交通大学全球暑期学校项目。",
+        "en": "Organized SJTU Global Summer School projects for more than ten international students."
+      }
+    },
+    {
+      "period": {
+        "zh": "论文审稿",
+        "en": "Reviewing"
+      },
+      "text": {
+        "zh": "担任 IEEE TVT、IEEE ICRA、IEEE IROS 等期刊及会议的审稿人。",
+        "en": "Reviewer for IEEE Transactions on Vehicular Technology, IEEE ICRA, IEEE IROS, and related venues."
+      }
+    },
+    {
+      "period": {
+        "zh": "学生指导",
+        "en": "Mentoring"
+      },
+      "text": {
+        "zh": "指导本科生申报并完成莙政计划、大学生创新训练计划及致远未来学者等项目。",
+        "en": "Mentored undergraduate projects in the Junzheng Program, undergraduate innovation training, and Zhiyuan Future Scholars Program."
+      }
+    },
+    {
+      "period": {
+        "zh": "学术交流",
+        "en": "Seminars"
+      },
+      "text": {
+        "zh": "参与组织国际学术报告及来访教授交流。",
+        "en": "Helped organize international academic seminars and visiting-professor exchanges."
+      }
+    }
+  ],
   "outreach": {
     "title": {
       "zh": "上交 IWIN-FINS 实验室 · 科研传播",
@@ -528,10 +576,24 @@ window.HOMEPAGE = {
   },
   "awards": [
     {
+      "date": "2026.04",
+      "text": {
+        "zh": "MATE 世界水下机器人大赛中国区预选赛 · PIONEER 组别冠军（团队）",
+        "en": "MATE ROV Competition, China Regional Qualifier · PIONEER Class Champion (team)"
+      }
+    },
+    {
+      "date": "2025.10",
+      "text": {
+        "zh": "腾讯犀牛鸟开源人才培养计划 · 混元大模型方向优秀学员",
+        "en": "Tencent Rhino-Bird Open-Source Talent Program · Outstanding Trainee, Hunyuan LLM Track"
+      }
+    },
+    {
       "date": "2025.08",
       "text": {
-        "zh": "“海聚英才”全球创新创业大赛",
-        "en": "Hai Ju Ying Cai Global Innovation and Entrepreneurship Competition"
+        "zh": "“海聚英才”全球创新创业大赛 · 入围",
+        "en": "“Hai Ju Ying Cai” Global Innovation and Entrepreneurship Competition · Finalist"
       }
     },
     {
@@ -565,6 +627,20 @@ window.HOMEPAGE = {
   ],
   "academicActivities": [
     {
+      "date": "2025.12",
+      "text": {
+        "zh": "PANNS · 新加坡国立大学（NUS）· 新加坡",
+        "en": "PANNS · National University of Singapore (NUS), Singapore"
+      }
+    },
+    {
+      "date": "2025.10",
+      "text": {
+        "zh": "IROS 2025 · 中国杭州",
+        "en": "IROS 2025 · Hangzhou, China"
+      }
+    },
+    {
       "date": "2024.07",
       "text": {
         "zh": "Learning for Dynamics & Control 2024 · 英国牛津",
@@ -572,6 +648,6 @@ window.HOMEPAGE = {
       }
     }
   ],
-  "updated": "2026-10-10",
+  "updated": "2026-10-23",
   "siteUrl": "https://fpj-gaoge.github.io/"
 };
